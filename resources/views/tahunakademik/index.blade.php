@@ -20,8 +20,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
+                        <div class="card-header">
+                            <a href="{{ route('tahun-akademik.create') }}" class="btn btn-primary">Tambah Data</a>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Data Tahun Akademik</h5>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama Tahun</th>
+                                        <th>Keterangan</th>
+                                        <th>Tools</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($tahunAkademik as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->nmtahunakademik }}</td>
+                                            <td>{{ $item->keterangan }}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

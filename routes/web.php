@@ -34,3 +34,4 @@ Route::get('studentview', [StudentController::class, 'list']);
 Route::get('cobamaster',[StudentController::class,'index']);
 
 Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class);
+
