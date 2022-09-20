@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TahunAkademik extends Model
 {
     use HasFactory;
+    //
+    // protected $fillable = ['nmtahunakademik','keterangan'];
+    protected $guarded = [];
 }
