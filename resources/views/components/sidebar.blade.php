@@ -61,12 +61,12 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" onclick="document.getElementById('logout-form').submit()" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
-                        </p>
+                        Logout
+                        <form action="{{ route('logout') }}" id="logout-form" method="post">
+                            @csrf
+                        </form>
                     </a>
                 </li>
             </ul>
