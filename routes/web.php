@@ -33,5 +33,14 @@ Route::get('studentview', [StudentController::class, 'list']);
 //index
 Route::get('cobamaster',[StudentController::class,'index']);
 
-Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class);
+// Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class)->middleware('auth');
 
+//untuk auth sistem
+Route::group(['middleware'=>['auth']], function(){
+    Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class);
+
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
