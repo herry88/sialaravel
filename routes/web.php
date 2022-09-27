@@ -34,10 +34,10 @@ Route::get('studentview', [StudentController::class, 'list']);
 Route::get('cobamaster',[StudentController::class,'index']);
 
 // Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class)->middleware('auth');
+Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class);
 
 //untuk auth sistem
 Route::group(['middleware'=>['auth']], function(){
-    Route::resource('tahun-akademik', \App\Http\Controllers\TahunAkademikController::class);
 
 });
 
